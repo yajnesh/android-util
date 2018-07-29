@@ -1,0 +1,65 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 27
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+//    compile 'in.yajnesh.util:java-util:1.0.0'
+    implementation project(':javautil')
+}
+
+
+
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'android-util'
+
+    publishedGroupId = 'in.yajnesh.util'
+    libraryName = 'android-util'
+    artifact = 'android-util'
+
+    libraryDescription = 'Most used short code snippets generically designed'
+
+    siteUrl = 'https://github.com/yajnesh/android-util'
+    gitUrl = 'https://github.com/yajnesh/android-util.git'
+
+    libraryVersion = '1.0.0'
+
+    developerId = 'yajnesh'
+    developerName = 'Yajnesh T'
+    developerEmail = 'yajnesh.t@gmail.com'
+
+    licenseName = 'GNU Public Licence, Version 2.0'
+    licenseUrl = 'https://www.gnu.org/licenses/'
+    allLicenses = ["GPL-3.0"]
+}
+
+apply plugin: 'com.jfrog.bintray'
+
+
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
