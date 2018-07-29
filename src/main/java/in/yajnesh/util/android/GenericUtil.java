@@ -23,8 +23,6 @@ import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v4.util.ArraySet;
 import android.support.v4.view.PagerAdapter;
 import android.text.Editable;
@@ -59,8 +57,8 @@ public class GenericUtil extends JUtil {
      * @param defaultValue in case of array is null or index out of bound, return this value
      * @return item if found, defaultValue otherwise
      */
-    @Nullable
-    public static <T> T get(@Nullable ArraySet<T> arraySet, int index, @Nullable T defaultValue) {
+    /*@Nullable*/
+    public static <T> T get(/*@Nullable*/ ArraySet<T> arraySet, int index, /*@Nullable*/ T defaultValue) {
         if (arraySet == null) {
             return defaultValue;
         }
@@ -76,8 +74,8 @@ public class GenericUtil extends JUtil {
      * @param index    the index at which the item needs to be fetched
      * @return item if found, null otherwise
      */
-    @Nullable
-    public static <T> T get(@Nullable ArraySet<T> arraySet, int index) {
+    /*@Nullable*/
+    public static <T> T get(/*@Nullable*/ ArraySet<T> arraySet, int index) {
         return get(arraySet, index, null);
     }
 
@@ -87,8 +85,8 @@ public class GenericUtil extends JUtil {
      * @param index the index at which the item needs to be fetched
      * @return item if found, null otherwise
      */
-    @Nullable
-    public static View get(@Nullable ViewGroup vg, int index) {
+    /*@Nullable*/
+    public static View get(/*@Nullable*/ ViewGroup vg, int index) {
         return get(vg, index, null);
     }
 
@@ -99,8 +97,8 @@ public class GenericUtil extends JUtil {
      * @param defaultValue in case of ViewGroup is null or index out of bound, return this value
      * @return item if found, defaultValue otherwise
      */
-    @Nullable
-    public static View get(@Nullable ViewGroup vg, int index, @Nullable View defaultValue) {
+    /*@Nullable*/
+    public static View get(/*@Nullable*/ ViewGroup vg, int index, /*@Nullable*/ View defaultValue) {
         if (vg == null) {
             return defaultValue;
         }
@@ -156,7 +154,7 @@ public class GenericUtil extends JUtil {
      * @return item if found, null otherwise
      * @see #getLastItem(ArraySet, Object)  getLastItem(arraySet,defaultValue)
      */
-    public static <T> T getLastItem(@Nullable ArraySet<T> as) {
+    public static <T> T getLastItem(/*@Nullable*/ ArraySet<T> as) {
         return getLastItem(as, null);
     }
 
@@ -168,7 +166,7 @@ public class GenericUtil extends JUtil {
      * @return item if found, defaultValue otherwise
      * @see #getLastItem(ArraySet)  getLastItem(arraySet)
      */
-    public static <T> T getLastItem(@Nullable ArraySet<T> as, T defaultValue) {
+    public static <T> T getLastItem(/*@Nullable*/ ArraySet<T> as, T defaultValue) {
         return get(as, GenericUtil.size(as) - 1, defaultValue);
     }
 
@@ -182,7 +180,7 @@ public class GenericUtil extends JUtil {
      * @return item if found, null otherwise
      * @see #getLastItem(ViewGroup, View)  getLastItem(viewGroup,defaultValue)
      */
-    public static View getLastItem(@Nullable ViewGroup vg) {
+    public static View getLastItem(/*@Nullable*/ ViewGroup vg) {
         return getLastItem(vg, null);
     }
 
@@ -194,7 +192,7 @@ public class GenericUtil extends JUtil {
      * @return item if found, defaultValue otherwise
      * @see #getLastItem(ViewGroup)  getLastItem(viewGroup)
      */
-    public static View getLastItem(@Nullable ViewGroup vg, View defaultValue) {
+    public static View getLastItem(/*@Nullable*/ ViewGroup vg, View defaultValue) {
         return get(vg, size(vg) - 1, defaultValue);
     }
 
@@ -238,7 +236,7 @@ public class GenericUtil extends JUtil {
      * @see #size(JSONArray)
      * @see #size(Collection)
      */
-    public static int size(@Nullable ViewGroup vg) {
+    public static int size(/*@Nullable*/ ViewGroup vg) {
         return vg == null ? 0 : vg.getChildCount();
     }
 
@@ -256,7 +254,7 @@ public class GenericUtil extends JUtil {
      * @see #size(JSONArray)
      * @see #size(Collection)
      */
-    public static <T> int size(@Nullable ArraySet<T> as) {
+    public static <T> int size(/*@Nullable*/ ArraySet<T> as) {
         return as == null ? 0 : as.size();
     }
 
@@ -273,7 +271,7 @@ public class GenericUtil extends JUtil {
      * @see #size(JSONArray)
      * @see #size(Collection)
      */
-    public static int size(@Nullable Bundle b) {
+    public static int size(/*@Nullable*/ Bundle b) {
         return b == null ? 0 : b.size();
     }
 
@@ -291,7 +289,7 @@ public class GenericUtil extends JUtil {
      * @see #isEmpty(PagerAdapter)
      * @see #isEmpty(Bundle)
      */
-    public static boolean isEmpty(@Nullable TextView tv) {
+    public static boolean isEmpty(/*@Nullable*/ TextView tv) {
         return tv == null || isEmpty(getString(tv));
     }
 
@@ -324,7 +322,7 @@ public class GenericUtil extends JUtil {
      * @see #isEmpty(PagerAdapter)
      * @see #isEmpty(Bundle)
      */
-    public static boolean isEmpty(@Nullable Editable et) {
+    public static boolean isEmpty(/*@Nullable*/ Editable et) {
         return isEmpty(getString(et));
     }
 
@@ -342,7 +340,7 @@ public class GenericUtil extends JUtil {
      * @see #isEmpty(Editable)
      * @see #isEmpty(Bundle)
      */
-    public static boolean isEmpty(@Nullable PagerAdapter adapter) {
+    public static boolean isEmpty(/*@Nullable*/ PagerAdapter adapter) {
         return adapter == null || adapter.getCount() == 0;
 
     }
@@ -361,7 +359,7 @@ public class GenericUtil extends JUtil {
      * @see #isEmpty(PagerAdapter)
      * @see #isEmpty(Editable)
      */
-    public static <T> boolean isEmpty(@Nullable Bundle b) {
+    public static <T> boolean isEmpty(/*@Nullable*/ Bundle b) {
         return b == null || b.isEmpty();
     }
 
@@ -388,8 +386,8 @@ public class GenericUtil extends JUtil {
      * @param tv The TextView/EditText
      * @return the string from EditText, null in all other cases
      */
-    @Nullable
-    public static String getString(@Nullable TextView tv) {
+    /*@Nullable*/
+    public static String getString(/*@Nullable*/ TextView tv) {
         if (tv == null) {
             return null;
         }
@@ -406,8 +404,8 @@ public class GenericUtil extends JUtil {
      * @param tv The TextView/EditText
      * @return the string from EditText, empty String in all other cases
      */
-    @NonNull
-    public static String getStringSafe(@Nullable TextView tv) {
+    /*@NonNull*/
+    public static String getStringSafe(/*@Nullable*/ TextView tv) {
         String s = getString(tv);
         return s == null ? JUtil.EMPTY_STRING : s;
     }
@@ -418,7 +416,7 @@ public class GenericUtil extends JUtil {
      * @param s The string
      * @return true if the entered string is valid email, false otherwise
      */
-    public static boolean isValidEmail(@Nullable String s) {
+    public static boolean isValidEmail(/*@Nullable*/ String s) {
         String string = getString(s);
         return !isEmpty(string) && Patterns.EMAIL_ADDRESS.matcher(string).matches();
     }
@@ -482,9 +480,9 @@ public class GenericUtil extends JUtil {
     }
 
     /**
-     * Is any object passed is null or empty.<br/>
+     * Is any object passed is null or empty.<br>
      * <p>
-     * Usage: <code>isAnyEmpty(string1,string2,string3,string4)</code><br/>
+     * Usage: <code>isAnyEmpty(string1,string2,string3,string4)</code><br>
      * Usage: <code>isAnyEmpty(collection,map,string,charSequence,object)</code>
      * </p>
      *
@@ -527,9 +525,9 @@ public class GenericUtil extends JUtil {
     }
 
     /**
-     * Are all the object passed is null or empty.<br/>
+     * Are all the object passed is null or empty.<br>
      * <p>
-     * Usage: <code>isAnyEmpty(string1,string2,string3,string4)</code><br/>
+     * Usage: <code>isAnyEmpty(string1,string2,string3,string4)</code><br>
      * Usage: <code>isAnyEmpty(collection,map,string,charSequence,object)</code>
      * </p>
      *

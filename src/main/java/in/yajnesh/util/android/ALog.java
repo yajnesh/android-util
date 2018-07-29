@@ -18,10 +18,9 @@ along with AndroidUtils. If not, see <https://www.gnu.org/licenses/>.
 
 (ɔ) Yajnesh T
 */
+
 import android.content.Context;
 import android.os.Environment;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -133,8 +132,8 @@ public class ALog {
     }
 
 
-    @NonNull
-    private static String g(int type, @Nullable String msg, @Nullable Throwable t, @Nullable Integer resId, @Nullable Context c) {
+    /*@NonNull*/
+    private static String g(int type, /*@Nullable*/ String msg, /*@Nullable*/ Throwable t, /*@Nullable*/ Integer resId, /*@Nullable*/ Context c) {
         try {
             if (resId != null && c != null) {
                 msg = c.getString(resId);
@@ -237,7 +236,7 @@ public class ALog {
     }
 
     /**
-     * Write What a Terrible Failure log  <br/><br/>
+     * Write What a Terrible Failure log  <br><br>
      * Condition: {@link #setLogLevel(int)} must be set between <code>LogLevel.WTF</code> and <code>LogLevel.VERBOSE</code>
      * <p>
      * if {@link #enableFileLogging(boolean)} is set to true, it will be written to file
@@ -246,13 +245,13 @@ public class ALog {
      * @param msg log to be printed
      * @return the msg
      */
-    @NonNull
-    public static String wtf(@Nullable String msg) {
+    /*@NonNull*/
+    public static String wtf(/*@Nullable*/ String msg) {
         return g(LogLevel.WTF, msg, null, null, null);
     }
 
     /**
-     * Write What a Terrible Failure log  <br/><br/>
+     * Write What a Terrible Failure log  <br><br>
      * Condition: {@link #setLogLevel(int)} must be set between <code>LogLevel.WTF</code> and <code>LogLevel.VERBOSE</code>
      * <p>
      * if {@link #enableFileLogging(boolean)} is set to true, it will be written to file
@@ -262,13 +261,13 @@ public class ALog {
      * @param t   an exception to log
      * @return the msg
      */
-    @NonNull
-    public static String wtf(@Nullable String msg, @Nullable Throwable t) {
+    /*@NonNull*/
+    public static String wtf(/*@Nullable*/ String msg, /*@Nullable*/ Throwable t) {
         return g(LogLevel.WTF, msg, t, null, null);
     }
 
     /**
-     * Write What a Terrible Failure log  <br/><br/>
+     * Write What a Terrible Failure log  <br><br>
      * Condition: {@link #setLogLevel(int)} must be set between <code>LogLevel.WTF</code> and <code>LogLevel.VERBOSE</code>
      * <p>
      * if {@link #enableFileLogging(boolean)} is set to true, it will be written to file
@@ -278,14 +277,14 @@ public class ALog {
      * @param resId String resource id
      * @return The String representing the resId
      */
-    @NonNull
-    public static String wtf(@Nullable Context c, int resId) {
+    /*@NonNull*/
+    public static String wtf(/*@Nullable*/ Context c, int resId) {
         return g(LogLevel.WTF, null, null, resId, c);
     }
 
 
     /**
-     * Write Error log  <br/><br/>
+     * Write Error log  <br><br>
      * Condition: {@link #setLogLevel(int)} must be set between <code>LogLevel.ERROR</code> and <code>LogLevel.VERBOSE</code>
      * <p>
      * if {@link #enableFileLogging(boolean)} is set to true, it will be written to file
@@ -294,13 +293,13 @@ public class ALog {
      * @param msg log to be printed
      * @return the msg
      */
-    @NonNull
-    public static String e(@Nullable String msg) {
+    /*@NonNull*/
+    public static String e(/*@Nullable*/ String msg) {
         return g(LogLevel.ERROR, msg, null, null, null);
     }
 
     /**
-     * Write Error log  <br/><br/>
+     * Write Error log  <br><br>
      * Condition: {@link #setLogLevel(int)} must be set between <code>LogLevel.ERROR</code> and <code>LogLevel.VERBOSE</code>
      * <p>
      * if {@link #enableFileLogging(boolean)} is set to true, it will be written to file
@@ -310,13 +309,13 @@ public class ALog {
      * @param t   an exception to log
      * @return the msg
      */
-    @NonNull
-    public static String e(@Nullable String msg, @Nullable Throwable t) {
+    /*@NonNull*/
+    public static String e(/*@Nullable*/ String msg, /*@Nullable*/ Throwable t) {
         return g(LogLevel.ERROR, msg, t, null, null);
     }
 
     /**
-     * Write Error log  <br/><br/>
+     * Write Error log  <br><br>
      * Condition: {@link #setLogLevel(int)} must be set between <code>LogLevel.ERROR</code> and <code>LogLevel.VERBOSE</code>
      * <p>
      * if {@link #enableFileLogging(boolean)} is set to true, it will be written to file
@@ -326,14 +325,14 @@ public class ALog {
      * @param resId String resource id
      * @return The String representing the resId
      */
-    @NonNull
-    public static String e(@Nullable Context c, int resId) {
+    /*@NonNull*/
+    public static String e(/*@Nullable*/ Context c, int resId) {
         return g(LogLevel.ERROR, null, null, resId, c);
     }
 
 
     /**
-     * Write Warn log  <br/><br/>
+     * Write Warn log  <br><br>
      * Condition: {@link #setLogLevel(int)} must be set between <code>LogLevel.WARN</code> and <code>LogLevel.VERBOSE</code>
      * <p>
      * if {@link #enableFileLogging(boolean)} is set to true, it will be written to file
@@ -342,13 +341,13 @@ public class ALog {
      * @param msg log to be printed
      * @return the msg
      */
-    @NonNull
-    public static String w(@Nullable String msg) {
+    /*@NonNull*/
+    public static String w(/*@Nullable*/ String msg) {
         return g(LogLevel.WARN, msg, null, null, null);
     }
 
     /**
-     * Write Warn log  <br/><br/>
+     * Write Warn log  <br><br>
      * Condition: {@link #setLogLevel(int)} must be set between <code>LogLevel.WARN</code> and <code>LogLevel.VERBOSE</code>
      * <p>
      * if {@link #enableFileLogging(boolean)} is set to true, it will be written to file
@@ -358,13 +357,13 @@ public class ALog {
      * @param t   an exception to log
      * @return the msg
      */
-    @NonNull
-    public static String w(@Nullable String msg, @Nullable Throwable t) {
+    /*@NonNull*/
+    public static String w(/*@Nullable*/ String msg, /*@Nullable*/ Throwable t) {
         return g(LogLevel.WARN, msg, t, null, null);
     }
 
     /**
-     * Write Warn log  <br/><br/>
+     * Write Warn log  <br><br>
      * Condition: {@link #setLogLevel(int)} must be set between <code>LogLevel.WARN</code> and <code>LogLevel.VERBOSE</code>
      * <p>
      * if {@link #enableFileLogging(boolean)} is set to true, it will be written to file
@@ -374,14 +373,14 @@ public class ALog {
      * @param resId String resource id
      * @return The String representing the resId
      */
-    @NonNull
-    public static String w(@Nullable Context c, int resId) {
+    /*@NonNull*/
+    public static String w(/*@Nullable*/ Context c, int resId) {
         return g(LogLevel.WARN, null, null, resId, c);
     }
 
 
     /**
-     * Write Debug log  <br/><br/>
+     * Write Debug log  <br><br>
      * Condition: {@link #setLogLevel(int)} must be set between <code>LogLevel.DEBUG</code> and <code>LogLevel.VERBOSE</code>
      * <p>
      * if {@link #enableFileLogging(boolean)} is set to true, it will be written to file
@@ -390,13 +389,13 @@ public class ALog {
      * @param msg log to be printed
      * @return the msg
      */
-    @NonNull
-    public static String d(@Nullable String msg) {
+    /*@NonNull*/
+    public static String d(/*@Nullable*/ String msg) {
         return g(LogLevel.DEBUG, msg, null, null, null);
     }
 
     /**
-     * Write Debug log  <br/><br/>
+     * Write Debug log  <br><br>
      * Condition: {@link #setLogLevel(int)} must be set between <code>LogLevel.DEBUG</code> and <code>LogLevel.VERBOSE</code>
      * <p>
      * if {@link #enableFileLogging(boolean)} is set to true, it will be written to file
@@ -406,13 +405,13 @@ public class ALog {
      * @param t   an exception to log
      * @return the msg
      */
-    @NonNull
-    public static String d(@Nullable String msg, @Nullable Throwable t) {
+    /*@NonNull*/
+    public static String d(/*@Nullable*/ String msg, /*@Nullable*/ Throwable t) {
         return g(LogLevel.DEBUG, msg, t, null, null);
     }
 
     /**
-     * Write Debug log  <br/><br/>
+     * Write Debug log  <br><br>
      * Condition: {@link #setLogLevel(int)} must be set between <code>LogLevel.DEBUG</code> and <code>LogLevel.VERBOSE</code>
      * <p>
      * if {@link #enableFileLogging(boolean)} is set to true, it will be written to file
@@ -422,13 +421,13 @@ public class ALog {
      * @param resId String resource id
      * @return The String representing the resId
      */
-    @NonNull
-    public static String d(@Nullable Context c, int resId) {
+    /*@NonNull*/
+    public static String d(/*@Nullable*/ Context c, int resId) {
         return g(LogLevel.DEBUG, null, null, resId, c);
     }
 
     /**
-     * Write Info log  <br/><br/>
+     * Write Info log  <br><br>
      * Condition: {@link #setLogLevel(int)} must be set between <code>LogLevel.INFO</code> and <code>LogLevel.VERBOSE</code>
      * <p>
      * if {@link #enableFileLogging(boolean)} is set to true, it will be written to file
@@ -437,13 +436,13 @@ public class ALog {
      * @param msg log to be printed
      * @return the msg
      */
-    @NonNull
-    public static String i(@Nullable String msg) {
+    /*@NonNull*/
+    public static String i(/*@Nullable*/ String msg) {
         return g(LogLevel.INFO, msg, null, null, null);
     }
 
     /**
-     * Write Info log  <br/><br/>
+     * Write Info log  <br><br>
      * Condition: {@link #setLogLevel(int)} must be set between <code>LogLevel.INFO</code> and <code>LogLevel.VERBOSE</code>
      * <p>
      * if {@link #enableFileLogging(boolean)} is set to true, it will be written to file
@@ -453,13 +452,13 @@ public class ALog {
      * @param t   an exception to log
      * @return the msg
      */
-    @NonNull
-    public static String i(@Nullable String msg, @Nullable Throwable t) {
+    /*@NonNull*/
+    public static String i(/*@Nullable*/ String msg, /*@Nullable*/ Throwable t) {
         return g(LogLevel.INFO, msg, t, null, null);
     }
 
     /**
-     * Write Info log  <br/><br/>
+     * Write Info log  <br><br>
      * Condition: {@link #setLogLevel(int)} must be set between <code>LogLevel.INFO</code> and <code>LogLevel.VERBOSE</code>
      * <p>
      * if {@link #enableFileLogging(boolean)} is set to true, it will be written to file
@@ -469,14 +468,14 @@ public class ALog {
      * @param resId String resource id
      * @return The String representing the resId
      */
-    @NonNull
-    public static String i(@Nullable Context c, int resId) {
+    /*@NonNull*/
+    public static String i(/*@Nullable*/ Context c, int resId) {
         return g(LogLevel.INFO, null, null, resId, c);
     }
 
 
     /**
-     * Write Verbose log  <br/><br/>
+     * Write Verbose log  <br><br>
      * Condition: {@link #setLogLevel(int)} must be set to <code>LogLevel.VERBOSE</code>
      * <p>
      * if {@link #enableFileLogging(boolean)} is set to true, it will be written to file
@@ -485,13 +484,13 @@ public class ALog {
      * @param msg log to be printed
      * @return the msg
      */
-    @NonNull
-    public static String v(@Nullable String msg) {
+    /*@NonNull*/
+    public static String v(/*@Nullable*/ String msg) {
         return g(LogLevel.VERBOSE, msg, null, null, null);
     }
 
     /**
-     * Write Verbose log  <br/><br/>
+     * Write Verbose log  <br><br>
      * Condition: {@link #setLogLevel(int)} must be set to <code>LogLevel.VERBOSE</code>
      * <p>
      * if {@link #enableFileLogging(boolean)} is set to true, it will be written to file
@@ -501,13 +500,13 @@ public class ALog {
      * @param t   an exception to log
      * @return the msg
      */
-    @NonNull
-    public static String v(@Nullable String msg, @Nullable Throwable t) {
+    /*@NonNull*/
+    public static String v(/*@Nullable*/ String msg, /*@Nullable*/ Throwable t) {
         return g(LogLevel.VERBOSE, msg, t, null, null);
     }
 
     /**
-     * Write Verbose log  <br/><br/>
+     * Write Verbose log  <br><br>
      * Condition: {@link #setLogLevel(int)} must be set to <code>LogLevel.VERBOSE</code>
      * <p>
      * if {@link #enableFileLogging(boolean)} is set to true, it will be written to file
@@ -517,8 +516,8 @@ public class ALog {
      * @param resId String resource id
      * @return The String representing the resId
      */
-    @NonNull
-    public static String v(@Nullable Context c, int resId) {
+    /*@NonNull*/
+    public static String v(/*@Nullable*/ Context c, int resId) {
         return g(LogLevel.VERBOSE, null, null, resId, c);
     }
 
@@ -576,7 +575,7 @@ public class ALog {
      * @param text Text to be shown
      * @return The text passed
      */
-    @Nullable
+    /*@Nullable*/
     public static String toast(Context c, String text) {
         try {
             if (c != null) Toast.makeText(c, text, Toast.LENGTH_SHORT).show();
@@ -593,7 +592,7 @@ public class ALog {
      * @param resId Resource id of the text
      * @return The text passed
      */
-    @Nullable
+    /*@Nullable*/
     public static String toast(Context c, int resId) {
         try {
             if (c != null) return toast(c, c.getString(resId));
@@ -604,14 +603,14 @@ public class ALog {
     }
 
     /**
-     * Log levels<br/>
+     * Log levels<br>
      * <p>
-     * {@link #WTF} wtf and above <br/>
-     * {@link #ERROR} error and above <br/>
-     * {@link #WARN} warn and above <br/>
-     * {@link #INFO} info and above <br/>
-     * {@link #DEBUG} debug and above <br/>
-     * {@link #VERBOSE} verbose and above <br/>
+     * {@link #WTF} wtf and above <br>
+     * {@link #ERROR} error and above <br>
+     * {@link #WARN} warn and above <br>
+     * {@link #INFO} info and above <br>
+     * {@link #DEBUG} debug and above <br>
+     * {@link #VERBOSE} verbose and above <br>
      * {@link #NONE} disable all logs
      */
     public static class LogLevel {

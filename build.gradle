@@ -2,7 +2,6 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 27
-
     defaultConfig {
         minSdkVersion 16
         targetSdkVersion 27
@@ -12,30 +11,32 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
     }
-
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
+    buildToolsVersion '27.0.3'
 }
+
+
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:support-v4:27.1.1'
     implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation project(':javautil')
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-//    compile 'in.yajnesh.util:java-util:1.0.0'
-    implementation project(':javautil')
+    //    compile 'in.yajnesh.util:java-util:1.0.0'
 }
 
 
 
 ext {
-    bintrayRepo = 'maven'
+    bintrayRepo = 'android-util'
     bintrayName = 'android-util'
 
     publishedGroupId = 'in.yajnesh.util'
@@ -57,6 +58,8 @@ ext {
     licenseUrl = 'https://www.gnu.org/licenses/'
     allLicenses = ["GPL-3.0"]
 }
+
+
 
 apply plugin: 'com.jfrog.bintray'
 

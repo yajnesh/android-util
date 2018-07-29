@@ -26,8 +26,6 @@ import android.content.res.Resources;
 import android.graphics.Point;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
@@ -101,8 +99,8 @@ public class ViewUtil {
 
 
     /**
-     * Compute Screen width and height and save it statically, call this once from application class<br/>
-     * access this value by <br/>
+     * Compute Screen width and height and save it statically, call this once from application class<br>
+     * access this value by <br>
      * {@link ViewUtil#getScreenWidth()} and {@link ViewUtil#getScreenHeight()}
      *
      * @param c Context
@@ -283,7 +281,7 @@ public class ViewUtil {
      * @param v view
      * @return LinearLayout params
      */
-    @NonNull
+    /*@NonNull*/
     public static LinearLayout.LayoutParams getLinearLayoutParams(View v) {
         LinearLayout.LayoutParams genericParam = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         if (v == null) {
@@ -322,7 +320,7 @@ public class ViewUtil {
      * @param state State of the views to be set, must be one of View.VISIBLE View.INVISIBLE or View.GONE
      * @param views varargs of views to set the state
      */
-    public static void setVisibility(/*@android.view.View.Visibility*/ int state, @Nullable View... views) {
+    public static void setVisibility(/*@android.view.View.Visibility*/ int state, /*@Nullable*/ View... views) {
         if (GenericUtil.isEmpty(views) ||
                 (state != View.VISIBLE && state != View.INVISIBLE && state != View.GONE)
                 ) {

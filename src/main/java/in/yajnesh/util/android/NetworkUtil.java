@@ -55,7 +55,7 @@ public class NetworkUtil {
     /**
      * Get the network info
      * <p>
-     * Be sure to add this permission in manifest <br/>{@code <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />}
+     * Be sure to add this permission in manifest <br>{@code <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />}
      *
      * @param context The context
      * @return The network info
@@ -133,27 +133,27 @@ public class NetworkUtil {
     }
 
     /**
-     * Converts map into url params and appends to the url <br/> <br/>
+     * Converts map into url params and appends to the url <br> <br>
      * <p>
      * Note that all keys and values will be urlencoded using GenericUtil.safeUrlEncode(string, CHARSET);
      *
      * @param url    The url, <code>www.example.com</code>
-     * @param params a map containing key value pairs, <code>key1=value1 , key2=value2</code>
-     * @return The constructed url, <code>www.example.com?key1=value1&key2=value2</code>
+     * @param params a map containing key value pairs,  {@code key1=value1 , key2=value2 }
+     * @return The constructed url, {@code www.example.com?key1=value1&key2=value2 }
      */
     public static String getUrlWithParams(String url, Map<String, String> params) {
         return getUrlWithParamsGeneric(url, null, params);
     }
 
     /**
-     * Converts Collection into url params and appends to the url <br/> <br/>
+     * Converts Collection into url params and appends to the url <br> <br>
      * <p>
      * Note that all keys and values will be urlencoded using GenericUtil.safeUrlEncode(string, CHARSET);
      *
      * @param url    The url, <code>www.example.com</code>
      * @param key    The common key, <code>key1</code>
-     * @param params a collection containing values, <code>value1,value2</code>
-     * @return The constructed url, <code>www.example.com?key1=value1&key1=value2</code>
+     * @param params a collection containing values, {@code value1,value2}
+     * @return The constructed url, {@code www.example.com?key1=value1&key1=value2 }
      */
 
     public static String getUrlWithParams(String url, String key, Collection<Object> params) {
