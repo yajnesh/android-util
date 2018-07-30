@@ -294,7 +294,7 @@ Version related info
 
 ## 14)  Html to Spanned
 
-     * Returns displayable styled text from the provided HTML string.
+Returns displayable styled text from the provided HTML string.
 
 #### ``` GenericUtil.getSpannedFromHtml(context);```
 
